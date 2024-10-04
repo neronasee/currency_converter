@@ -14,22 +14,27 @@ App for a currency conversion
 ```sh
 git clone git@github.com:neronasee/currency_converter.git
 ```
-2. Run app and redis with
+2. Install deps
+```sh
+npm install
+```
 
+3. Copy (and optionally adjust env variables) 
+```sh
+cp .env_example .env
+```
+
+2. Run app and redis with
 ```sh
 docker-compose up
 ```
 
 ### Usage
 
-1. Copy (and optionally adjust env variables) 
-```sh
-cp .env_example .env
-```
-2. Use example CURL request:
+Use example CURL request:
 
 ```sh
-curl -X POST http://localhost:3000/currency/convert \   
+curl -X POST http://localhost:3000/currency/convert \
    -H "Content-Type: application/json" \
    -d '{"sourceCurrency": 840, "targetCurrency": 980, "amount": 10}'
 ```
@@ -49,7 +54,8 @@ Example response:
 
 There's only 1 simple e2e test, that requires the app to be running
 
-1. Run e2e tests 
+
+Run e2e tests 
 ```sh
 npm run test:e2e
 ```
